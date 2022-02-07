@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형패턴 2번</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #087280;
+        }
+        nav a {
+            display: inline-block;
+            position: relative;
+            margin: 15px 10px;
+            text-decoration: none;
+            text-shadow: 0 0 1px rgba(255,255,255,0.3);
+            font-size: 18px;
+            color: #fff;
+            outline: none;
+            /* text-align: center; */
+        }
+        
+        nav a:hover,
+        nav a:focus {
+            outline: none;
+        }
+
+        .effect11 a {
+            line-height: 42px;
+            perspective: 800px;
+        }
+
+        .effect11 a span {
+            display: inline-block;
+            position: relative;
+            padding: 3px 15px 0;
+            background: #587285;
+            box-shadow: inset 0 3px #2f4351;
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            transform-origin: 0 50%;
+        }
+
+        .effect11 a span:before {
+            content: attr(data-hover);
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* width: 100%;
+            height: 100%; */
+            padding: 3px 15px 0;
+            font-weight: 400;
+            background: #fff;
+            color: #2f4351;
+            transform: rotateX(270deg);
+            transition: 0.6s;
+            transform-origin: 0 0;
+        }
+
+        .effect11 a:hover span {
+            background: #2f4351;
+        }
+
+        .effect11 a:hover span:before {
+            transform: rotate(0deg);
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="effect11">
+        <a href="#"><span data-hover="HTML">HTML</span></a>
+        <a href="#"><span data-hover="CSS">CSS</span></a>
+        <a href="#"><span data-hover="JavaScript">JavaScript</span></a>
+        <a href="#"><span data-hover="JQuery">JQuery</span></a>
+        <a href="#"><span data-hover="References">References</span></a>
+    </nav>    
+</body>
+</html>

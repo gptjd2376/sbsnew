@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형패턴 2번</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: palevioletred;
+        }
+        nav a {
+            display: inline-block;
+            position: relative;
+            margin: 15px 10px;
+            text-decoration: none;
+            text-shadow: 0 0 1px rgba(255,255,255,0.3);
+            font-size: 18px;
+            color: #fff;
+            outline: none;
+            text-align: center;
+        }
+        
+        nav a:hover,
+        nav a:focus {
+            outline: none;
+        }
+
+        .effect5 a {
+            padding: 18px 20px;
+
+        }
+
+        .effect5 a::before,
+        .effect5 a::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #fff;
+            opacity: 0.2;
+            transition: 0.3s;
+        }
+
+        .effect5 a:after {
+            top: 100%;
+            opacity: 0;
+            transition: 0.3s;
+            transform: translateY(-10px);
+        }
+
+        .effect5 a span:first-child {
+            display: block;
+            font-weight: 400;
+        }
+
+        .effect5 a span:last-child {
+            display: block;
+            padding: 8px 0 0;
+            font-size: 10px;
+            color: rgba(0,0,0,0.4);
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: 0.3s;
+        }
+
+        .effect5 a:hover::before {
+            height: 6px;
+        }
+
+        .effect5 a:hover::before,
+        .effect5 a:hover::after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .effect5 a:hover span:last-child {
+            opacity: 1;
+            transform: translateY(0%);
+            height: 1px;
+        }   
+        
+    </style>
+</head>
+<body>
+    <nav class="effect5">
+        <a href="#"><span>HTML</span><span>Definition and Usage</span></a>
+        <a href="#"><span>CSS</span><span>Definition and Usage</span></a>
+        <a href="#"><span>JavaScript</span><span>Definition and Usage</span></a>
+        <a href="#"><span>JQuery</span><span>Definition and Usage</span></a>
+        <a href="#"><span>References</span><span>Definition and Usage</span></a>
+    </nav>    
+</body>
+</html>
